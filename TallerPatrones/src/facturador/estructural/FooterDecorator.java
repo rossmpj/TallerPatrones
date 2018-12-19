@@ -21,7 +21,7 @@ public class FooterDecorator extends DetalleDecorator{
 
  @Override
     public List<String> getDetallesEmisor() {
-        super.getDetallesEmisor().add("Footer Decorator...");
+        super.getDetallesEmisor().add("Footer Decorator");
         return comprobante.getDetallesEmisor();
     }
     

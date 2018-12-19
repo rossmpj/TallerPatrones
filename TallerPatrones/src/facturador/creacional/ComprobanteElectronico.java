@@ -5,7 +5,6 @@
  */
 package facturador.creacional;
 
-import facturador.comportamentales.*;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
@@ -83,16 +82,16 @@ public class ComprobanteElectronico {
         this.claveAcceso = claveAcceso;
     }
     
-     public void elegirEsquema(String esquema){
-        AutorizadorSRI au;
-        if(esquema.equalsIgnoreCase("Online")){
-            au=new EsquemaOnline();
-            au.autorizar(this);
-        }else if(esquema.equalsIgnoreCase("Offline")){
-            au=new EsquemaOffline();
-            au.autorizar(this);
-        }
-    }
+//     public void elegirEsquema(String esquema){
+//        AutorizadorSRI au;
+//        if(esquema.equalsIgnoreCase("Online")){
+//            au=new EsquemaOnline();
+//            au.autorizar(this);
+//        }else if(esquema.equalsIgnoreCase("Offline")){
+//            au=new EsquemaOffline();
+//            au.autorizar(this);
+//        }
+//    }
 
     @Override
     public String toString() {

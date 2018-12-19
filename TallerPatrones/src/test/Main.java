@@ -5,6 +5,9 @@
  */
 package test;
 
+import facturador.comportamentales.AutorizadorSRI;
+import facturador.comportamentales.EsquemaOffline;
+import facturador.comportamentales.EsquemaOnline;
 import facturador.creacional.ComprobanteElectronico;
 import facturador.creacional.ComprobantesFactory;
 import facturador.estructural.DetalleDecorator;
@@ -21,6 +24,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         ComprobantesFactory compFactory = new ComprobantesFactory();
+        AutorizadorSRI sri = new AutorizadorSRI(new EsquemaOffline());
+        AutorizadorSRI sri1 = new AutorizadorSRI(new EsquemaOnline());
         List<String> detallesEmisor = new ArrayList<>();
         detallesEmisor.add("empleado Andres Vera");
         
@@ -31,16 +36,16 @@ public class Main {
         fact.setFecha(LocalDate.now());
         fact.setNombreCliente("ROSA");
         fact.setNumeroAutorizacion("244475687");
-        fact.elegirEsquema("Offline");
         fact.setDetallesEmisor(detallesEmisor);
+
         System.out.println("Logo de Comprobante ");
         DetalleDecorator logo = new LogoDecorator(fact);
         System.out.println(logo.getDetallesEmisor());
         System.out.println("Footer de Comprobante");
         DetalleDecorator footer = new FooterDecorator(fact);
         System.out.println(footer.getDetallesEmisor());
-        
         System.out.println(fact);
+        sri1.executeStrategy(fact);
         
         ComprobanteElectronico guia = compFactory.getComprobante("GUIAREMISION");
         guia.setCodigo(243546);
@@ -48,8 +53,8 @@ public class Main {
         guia.setDetallesEmisor(detallesEmisor);
         guia.setNombreCliente("Carlos Andrade");
         guia.setNumeroAutorizacion("aut001");
-        guia.elegirEsquema("Online");
         guia.setFecha(LocalDate.now());
+
         System.out.println("Logo de Comprobante ");
         DetalleDecorator logo2 = new LogoDecorator(guia);
         //System.out.println(logo2.getDetallesEmisor());
@@ -57,6 +62,7 @@ public class Main {
         DetalleDecorator footer2 = new FooterDecorator(guia);
         //System.out.println(footer2.getDetallesEmisor());
         System.out.println(guia);
+        sri.executeStrategy(guia);
         
         ComprobanteElectronico nota = compFactory.getComprobante("NOTACREDITO");
         nota.setNumeroAutorizacion("2436");
@@ -65,7 +71,6 @@ public class Main {
         nota.setCodigo(1110001);
         nota.setNombreCliente("Juan Parraga");
         nota.setDetallesEmisor(detallesEmisor);
-        nota.elegirEsquema("Offline");
         System.out.println("Logo de Comprobante ");
         DetalleDecorator logo3 = new LogoDecorator(nota);
         //System.out.println(logo3.getDetallesEmisor());
@@ -73,7 +78,7 @@ public class Main {
         DetalleDecorator footer3 = new FooterDecorator(nota);
         //System.out.println(footer3.getDetallesEmisor());
         System.out.println(nota);
-        
+        sri1.executeStrategy(nota);
     }
     
 }

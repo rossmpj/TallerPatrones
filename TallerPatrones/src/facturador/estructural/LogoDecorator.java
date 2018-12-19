@@ -21,7 +21,7 @@ public class LogoDecorator extends DetalleDecorator {
 
     @Override
     public List<String> getDetallesEmisor() {
-        super.getDetallesEmisor().add("Logo Decorator...");
+        super.getDetallesEmisor().add("Logo Decorator");
         return detallesEmisor;
     }
   
