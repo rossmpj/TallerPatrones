@@ -22,6 +22,7 @@ public class ComprobanteElectronico {
     protected LocalDate fecha;
     protected String numeroAutorizacion;
     protected String claveAcceso;
+    
 
     public ComprobanteElectronico(String nombreCliente, long codigo, LocalDate fecha) {
         this.nombreCliente = nombreCliente;
