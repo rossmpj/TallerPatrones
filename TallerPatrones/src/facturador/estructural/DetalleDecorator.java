@@ -6,7 +6,6 @@
 package facturador.estructural;
 
 import facturador.creacional.ComprobanteElectronico;
-import java.util.LinkedList;
 import java.util.List;
 
 /**

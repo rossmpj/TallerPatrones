@@ -81,17 +81,6 @@ public class ComprobanteElectronico {
     public void setClaveAcceso(String claveAcceso) {
         this.claveAcceso = claveAcceso;
     }
-    
-//     public void elegirEsquema(String esquema){
-//        AutorizadorSRI au;
-//        if(esquema.equalsIgnoreCase("Online")){
-//            au=new EsquemaOnline();
-//            au.autorizar(this);
-//        }else if(esquema.equalsIgnoreCase("Offline")){
-//            au=new EsquemaOffline();
-//            au.autorizar(this);
-//        }
-//    }
 
     @Override
     public String toString() {
