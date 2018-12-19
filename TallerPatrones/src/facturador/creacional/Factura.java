@@ -5,6 +5,9 @@
  */
 package facturador.creacional;
 
+import facturador.comportamentales.AutorizadorSRI;
+import facturador.comportamentales.EsquemaOffline;
+import facturador.comportamentales.EsquemaOnline;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -41,7 +44,7 @@ public class Factura extends ComprobanteElectronico{
     public void setTotal(double total) {
         this.total = total;
     }
-
+   
     @Override
     public String toString() {
         return "Factura: \n" + super.toString() + "\n\tProductos: " + productos + "\n\tTotal: " + total;

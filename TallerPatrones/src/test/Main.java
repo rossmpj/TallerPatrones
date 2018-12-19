@@ -27,7 +27,9 @@ public class Main {
         fact.setFecha(LocalDate.now());
         fact.setNombreCliente("ROSA");
         fact.setNumeroAutorizacion("244475687");
+        fact.elegirEsquema("Offline");
         fact.setDetallesEmisor(detallesEmisor);
+        
         System.out.println(fact);
         
         ComprobanteElectronico guia = compFactory.getComprobante("GUIAREMISION");
@@ -36,7 +38,9 @@ public class Main {
         guia.setDetallesEmisor(detallesEmisor);
         guia.setNombreCliente("Carlos Andrade");
         guia.setNumeroAutorizacion("aut001");
+        guia.elegirEsquema("Online");
         guia.setFecha(LocalDate.now());
+        
         System.out.println(guia);
         
         ComprobanteElectronico nota = compFactory.getComprobante("NOTACREDITO");
@@ -46,7 +50,9 @@ public class Main {
         nota.setCodigo(1110001);
         nota.setNombreCliente("Juan Parraga");
         nota.setDetallesEmisor(detallesEmisor);
+        nota.elegirEsquema("Offline");
         System.out.println(nota);
+        
     }
     
 }

@@ -6,22 +6,25 @@
 package facturador.comportamentales;
 
 import facturador.creacional.ComprobanteElectronico;
+import java.util.Random;
 
 /**
  *
  * @author Palacios
  */
-public class AutorizadorSRI {
-    
-    private final Esquema esquema_de_autorizacion;
-
- 
-    public AutorizadorSRI(Esquema esquema_de_autorizacion) {
-        this.esquema_de_autorizacion = esquema_de_autorizacion;
+public abstract class AutorizadorSRI implements Esquema{
+      private String Esquema;
+   
+    public String numAutorizacionAsignado(){
+        return String.valueOf((Math.random()*100)+1);
     }
-    
-    public void autorizar(ComprobanteElectronico comprobante){
-        esquema_de_autorizacion.autorizar(comprobante);
+
+    public String getEsquema() {
+        return Esquema;
+    }
+
+    public void setEsquema(String Esquema) {
+        this.Esquema = Esquema;
     }
     
 }

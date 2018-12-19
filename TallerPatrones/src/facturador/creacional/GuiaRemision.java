@@ -50,7 +50,7 @@ public class GuiaRemision extends ComprobanteElectronico {
     public void setListaProductos(List<String> listaProductos) {
         this.listaProductos = listaProductos;
     }
-
+    
     @Override
     public String toString() {
         return "Guia de Remision: \n" + super.toString() +"\n\tDestino: " + destino 
