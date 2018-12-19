@@ -11,13 +11,15 @@ import facturador.creacional.ComprobanteElectronico;
  *
  * @author dannyleo
  */
-public class EsquemaOffline extends AutorizadorSRI implements Esquema{
+public class EsquemaOffline implements Esquema{
 
     public EsquemaOffline() {
     }
     
     @Override
     public void autorizar(ComprobanteElectronico comprobante){
-        comprobante.setNumeroAutorizacion(comprobante.getClaveAcceso());
+        String key = "abc0345";
+        comprobante.setClaveAcceso(key);
+        System.out.println("\t*Autorización offline");
     }
 }
